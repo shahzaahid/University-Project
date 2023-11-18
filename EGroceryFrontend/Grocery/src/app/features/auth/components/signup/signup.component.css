@@ -1,0 +1,12 @@
+/* Add the following CSS to position the toggle button to the right */
+.theme-form-floating.log-in-form {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px; /* Adjust the right position as needed */
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}

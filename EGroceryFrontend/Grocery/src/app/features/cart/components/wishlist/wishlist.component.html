@@ -1,0 +1,74 @@
+<title>Wishlist</title>
+<!-- wishlist text added -->
+<section class="breadscrumb-section pt-0">
+  <div class="container-fluid-lg">
+    <div class="row">
+      <div class="col-12">
+        <div class="breadscrumb-contain">
+          <h2>Wishlist</h2>
+          <nav>
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item">
+                <a href="index.html">
+                  <i class="fa-solid fa-house"></i>
+                </a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Wishlist
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wishlist Section Start -->
+
+   <div class="row">
+    <div class="col-xxl-2 col-lg-3 col-md-4 col-6 product-box-contain" *ngFor="let item of products; let i = index" style="margin:20px;">
+    <div class="product-box-3 h-100">
+        <div class="product-header">
+            <div class="product-image">
+                <a href="product-left-thumbnail.html">
+                    <img src="http://localhost:5148/api/Product/images/{{item.id}}" class="img-fluid blur-up lazyloaded" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="product-footer">
+            <div class="product-detail">
+                <h1 class="name">Name: {{ item.name }}</h1><Br>
+                <h3 class="description" style="height: 40px;">Description: {{ item.description }}</h3>
+                <h2 class="quantity">Quantity: {{ item.packSize }}</h2>
+                <h2 class="price">
+                    <span class="theme-color">Price : ₹{{ item.price }}</span>
+                </h2>
+                <h3 class="totalAmount">
+                    <span class="theme-color">Total Amount : ₹{{ item.price }}</span>
+                </h3>
+                <!-- <div class="quantity-controls">
+                    <button type="button" class="btn btn-quantity bg-gray" data-type="minus" data-field="" (click)="decreaseQuantity(item)">-</button>
+                    <input class="form-control input-number qty-input" type="text" name="quantity" [(ngModel)]="item.quantity">
+                    <button type="button" class="btn btn-quantity bg-gray" data-type="plus" data-field="" (click)="increaseQuantity(item)">+</button>
+                </div> -->
+                <br>
+                <button class="btn wishlist-button close_button" (click)=" removeFromWishlist(item.id)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="d-flex align-items-center justify-content-start mt-2 " > <!-- Adjust position left and center vertically -->
+                    <button class="btn btn-add-cart addcart-button bg-success" style="margin-left:45px;" (click)="addToCart(item)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+  </div>
+  <!-- ... other product cards ... -->
+</div>
+
+

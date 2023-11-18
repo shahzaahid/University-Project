@@ -1,0 +1,82 @@
+<title>Product Item</title>
+
+<!-- Breadcrumb Section Start -->
+<section class="breadscrumb-section pt-0">
+  <div class="container-fluid-lg">
+      <div class="row">
+          <div class="col-12">
+              <div class="breadscrumb-contain">
+                  <h2>Product Item Details</h2>
+                  <nav>
+                      <ol class="breadcrumb mb-0">
+                          <li class="breadcrumb-item">
+                              <a href="index.html" style="cursor: pointer;">
+                                  <i class="fa-solid fa-house"></i>
+                              </a>
+                          </li>
+                          <li class="breadcrumb-item active" aria-current="page">Product Item Details</li>
+                      </ol>
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Breadcrumb Section End -->
+<div class="row g-sm-4 g-2">
+  <div class="col-lg-4">
+    <!-- Left Column: Product Image -->
+    <div class="product-header" style="margin-bottom: 50px;margin-top: 100px;margin-left: 100px;">
+      <!-- Add a container for the image with fixed size using Bootstrap classes -->
+      <div class="product-image-container">
+        <img src="http://localhost:5148/api/Product/images/{{ productData.id }}" class="img-fluid blur-up lazyloaded" alt="" style="height: 200px; width: 200px;  margin-top: 20px;margin-bottom: 20px;">
+        <br>
+      </div>
+      <div class="add-to-cart-box bg-warning mt-3">
+        <button class="btn btn-add-cart addcart-button text-white" (click)="addToCart(productData[10])">Add To Cart</button>
+      </div>
+      <br>
+      <div class="add-to-cart-box bg-success mt-2">
+        <div class="d-flex align-items-center">
+          <span class="wishlist-text text-white mr-2" style="margin-left: 35%; margin-right: 6px;">Wishlist</span>
+          <a routerLink="/wishlist" class="notifi-wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <!-- Right Column: Product Details -->
+    <div class="right-sidebar-modal" style="margin-bottom: 50px;margin-top: 100px">
+      <div class="title-name" style="height:40px">
+        <h4 class="text-dark">Name : {{ productData.name }}</h4>
+      </div>
+      <div class="brand" style="height:40px">
+        <h4 class="text-dark">Brand : {{ productData.brand}}</h4>
+      </div>
+      <div class="Category" style="height:40px">
+        <h4 class="text-dark">Category : {{ productData.category }}</h4>
+      </div>
+      <div class="Description" style="height:40px">
+        <h4 class="text-dark">Description : {{ productData.description }}</h4>
+      </div>
+      <div class="Price" style="height:40px">
+        <h4 class="text-dark">Price : {{ productData.price}}</h4>
+      </div>
+      <div class="Quantity" style="height:40px">
+        <h4 class="text-dark">Quantity: {{ productData.packSize}}</h4>
+      </div>
+      <div class="Unit" style="height:40px">
+        <h4 class="text-dark">Unit : {{ productData.unit }}</h4>
+      </div>
+      <div class="Quantity" style="height:40px">
+        <h4 class="text-dark">Stock Quantity: {{ productData.stockQty}}</h4>
+      </div>
+      
+    </div>
+  </div>
+</div> 

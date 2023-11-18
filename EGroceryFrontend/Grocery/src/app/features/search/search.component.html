@@ -1,0 +1,236 @@
+<title>Product-List</title>
+
+<!-- Breadcrumb Section Start -->
+<section class="breadscrumb-section pt-0">
+    <div class="container-fluid-lg">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadscrumb-contain">
+                    <h2>Shop List</h2>
+                    <nav>
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <i class="fa-solid fa-house"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Shop List</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+<!-- start product-->
+<section class="section-b-space shop-section">
+    <div class="container-fluid-lg">
+        <div class="row">
+            <div class="col-custome-3">
+                <div class="left-box wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+                    <div class="shop-left-sidebar">
+                        <div class="back-button">
+                            <h3><i class="fa-solid fa-arrow-left"></i> Back</h3>
+                        </div>
+
+                        <div class="category-menu">
+                            <h3>Category</h3>
+                            <ul>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                  src="assets/svg/vegetable.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('Fruit')" >Fruits</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                  src="assets/svg/vegetable.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('Vegetable')" >Vegetables</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/frozen.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('frozen')" >Frozen Food</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/biscuit.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('Biscuit')" >Biscuit and Bread</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/drink.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('Drink')" >Drink</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/biscuit.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('snack')" >Snacks</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/grocery.svg" 
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('spices')" >Spices</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/meats.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('meat')" >Meat</a>
+                                  </h5>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="category-list">
+                                  <img
+                                    src="assets/svg/milk.svg"
+                                    class="blur-up lazyload"
+                                    alt=""
+                                  />
+                                  <h5>
+                                    <a routerLink="/category" (click)="Category('Milk')" >Milk</a>
+                                  </h5>
+                                </div>
+                              </li>
+                         <br>
+                            </ul>
+                
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+<div class="col-custome-9">
+    <!--shop section end-->
+<!-- start product-->
+
+<div class="row" >
+  <ng-container *ngFor="let product of products">
+    <div *ngIf="search.toLowerCase() === product.name.toLowerCase() || search2.toLowerCase()===product.name.toLowerCase() ||search.toLowerCase() === product.brand.toLowerCase() || search2.toLowerCase()===product.brand.toLowerCase() ||search.toLowerCase() === product.category.toLowerCase() || search2.toLowerCase()===product.category.toLowerCase()" class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-6 product-box-contain" style="margin-bottom: 10px;">
+    <div   class="product-box-3 h-100 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <div class="product-header">
+          <div class="product-image">
+            <a>
+              <img src="http://localhost:5148/api/Product/images/{{product.id}}" class="img-fluid blur-up lazyloaded" alt="">
+            </a>
+            <ul class="product-option d-flex " style="width: 40%;">
+              <li data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="View" style="width: 50%;">
+                <a routerLink="/productItem" data-bs-toggle="modal" data-bs-target="#view" (click)="onEyeIconClick(product.id)">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </a>
+              </li>
+  
+              <li data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Wishlist" style="width: 50%;cursor:pointer">
+                <a  class="notifi-wishlist" (click)="addToWishlist(product)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                </a>
+            </li>
+            
+            </ul>
+  
+          </div>
+        </div>
+  
+        <div class="product-footer">
+          <div class="product-detail">
+            <h4 class="name">Name: {{ product.name }}</h4>
+  
+            <h5 class="name">Brand: {{ product.brand }}</h5>
+  
+            <h4 class="description d-inline-block" style="height: 40px;">Description: {{ product.description }}</h4>
+            <div class="product-rating mt-2">
+              <ul class="rating">
+                <!-- Display star icons for product rating -->
+                <li *ngFor="let star of [1, 2, 3, 4, 5]">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" class="feather feather-star fill">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                </li>
+              </ul>
+              <span>(5.0)</span>
+            </div>
+            <h6 class="unit">Quantity: {{ product.unit }}</h6>
+            <h5 class="price"><span class="theme-color">Price: ₹{{ product.price }}</span></h5>
+            <div class="add-to-cart-box bg-warning">
+              <button class="btn btn-add-cart addcart-button" style="color:white" (click)="addToCart(product)">Add To Cart
+              </button>
+            </div>
+            <br>
+            <div class="add-to-cart-box bg-success"  >
+              <div class="d-flex align-items-center">
+            <button class="bg-success"  
+                (click)="addToWishlist(product)" style="margin-left: 40px;border:none;font:20px;color:white;border-radius:20px" >
+                    Add To Wishlist
+              </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="feather feather-heart">
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </ng-container>
+  </div>

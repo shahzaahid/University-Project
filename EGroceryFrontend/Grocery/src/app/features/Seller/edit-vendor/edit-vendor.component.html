@@ -1,0 +1,95 @@
+<title>Vendor Edit Profile Page</title>>
+<!-- Breadcrumb Section Start -->
+    <section class="breadscrumb-section pt-0">
+        <div class="container-fluid-lg">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadscrumb-contain">
+                        <h2>Edit Profile</h2>
+                        <nav>
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">
+                                        <i class="fa-solid fa-house"></i>
+                                    </a>
+                                </li>
+                                <li class="breadcrumb-item active">Edit Profile</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+    <section class="log-in-section section-b-space">
+        <div class="container-fluid-lg w-100">
+          <div class="row">
+            <!-- Image on the left -->
+            <div class="col-xxl-6 col-xl-5 col-lg-6 d-lg-block d-none ms-auto">
+              <div class="image-contain">
+                <img src="assets/images/inner-page/sign-up.png" class="img-fluid" alt="">
+              </div>
+            </div>
+      
+            <!-- Form on the right -->
+            <div class="col-xxl-4 col-xl-5 col-lg-6 col-sm-8 mx-auto">
+              <div class="log-in-box">
+                <div class="log-in-title">
+                  <h3>Welcome To Grocery Store</h3>
+                  <h4>Edit your Account As Vendor</h4>
+                </div>
+      
+                <div class="input-box">
+                  <form class="row g-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="col-12">
+                      <div class="form-floating theme-form-floating">
+                        <input type="text" class="form-control" id="companyName" formControlName="companyName">
+                        <label for="companyName">Company Name*</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating theme-form-floating">
+                        <input type="text" class="form-control" id="fssai" formControlName="fssai">
+                        <label for="fssai">FSSAI Number*</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating theme-form-floating">
+                        <input type="text" class="form-control" id="gst" formControlName="gst">
+                        <label for="gst">GST Number*</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating theme-form-floating">
+                        <input type="text" class="form-control" id="phonenumber" formControlName="phonenumber">
+                        <label for="phonenumber">Phone Number*</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-floating theme-form-floating">
+                        <input type="email" class="form-control" id="email" formControlName="email">
+                        <label for="email">Email Address*</label>
+                      </div>
+                    </div>
+                    <div class="col-12 position-relative">
+                      <div class="form-floating theme-form-floating">
+                        <input type="{{ hidePassword ? 'password' : 'text' }}" class="form-control" id="password" formControlName="password">
+                        <label for="password">Password*</label>
+                        <span class="toggle-password position-absolute top-50 end-0 translate-middle-y me-3"
+                              (click)="togglePasswordVisibility()">
+                          <i class="fa" [ngClass]="{'fa-eye-slash': hidePassword, 'fa-eye': !hidePassword}"></i>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-animation w-100" type="submit">Edit Details</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
